@@ -1,0 +1,88 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
+import sfTab1 from '@/components/tables/sfTab1'
+import sfTab2 from '@/components/tables/sfTab2'
+import fxqTab from '@/components/tables/fxqTab'
+import linearChart from '@/components/charts/linearBar'
+import piecewiseBar from '@/components/charts/piecewiseBar'
+import targetPerson from '@/components/charts/targetPerson'
+import customMap from '@/components/charts/customMapFlow/customMap'
+import ringPie1 from '@/components/charts/ringPie1'
+import ringPie2 from '@/components/charts/ringPie2'
+import g2chart from '@/components/charts/g2chart'
+
+import jianchu from '@/components/styleEffect/jianchu'
+import countryData from '@/components/tables/countryData/index'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/sfTab1',
+      name: 'sfTab1',
+      component: sfTab1
+    },
+    {
+      path: '/sfTab2',
+      name: 'sfTab2',
+      component: sfTab2
+    },
+    {
+      path: '/fxqTab',
+      name: 'fxqTab',
+      component: fxqTab
+    },
+    {
+      path: '/linearChart',
+      name: 'linearChart',
+      component: linearChart
+    },
+    {
+      path: '/piecewiseBar',
+      name: 'piecewiseBar',
+      component: piecewiseBar,
+    },
+    {
+      path: '/targetPerson',
+      name: 'targetPerson',
+      component: targetPerson,
+    },
+    {
+      path: '/customMap',
+      name: 'customMap',
+      component: customMap
+    },
+    {
+      path: '/ringPie1',
+      name: 'ringPie1',
+      component: ringPie1
+    },
+    {
+      path: '/ringPie2',
+      name: 'ringPie2',
+      component: ringPie2
+    },
+    {
+      path: '/g2chart',
+      name: 'g2chart',
+      component: g2chart
+    },
+    {
+      path: "/jianchu",
+      name: 'jianchu',
+      component: jianchu
+    },
+    {
+      path: "/countryData",
+      name: "countryData",
+      component: countryData
+    }
+  ]
+})
