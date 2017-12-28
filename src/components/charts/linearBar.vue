@@ -1,6 +1,6 @@
 <template>
   <div ref="linearBar" class="chart">
-
+    
   </div>
 </template>
 
