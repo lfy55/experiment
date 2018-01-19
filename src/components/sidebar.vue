@@ -31,6 +31,7 @@
           <span slot="title">页面效果</span>
         </template>
         <el-menu-item index="jianchu">dom渐出</el-menu-item>
+        <el-menu-item index="BFCTest">BFC学习测试</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

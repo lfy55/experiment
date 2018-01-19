@@ -13,13 +13,14 @@ import ringPie2 from '@/components/charts/ringPie2'
 import g2chart from '@/components/charts/g2chart'
 
 import jianchu from '@/components/styleEffect/jianchu'
+import BFCTest from '@/components/styleEffect/BFCTest'
+
 import countryData from '@/components/tables/countryData/index'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
@@ -83,6 +84,11 @@ export default new Router({
       path: "/countryData",
       name: "countryData",
       component: countryData
+    },
+    {
+      path: '/BFCTest',
+      name: 'BFCTest',
+      component: BFCTest
     }
   ]
 })

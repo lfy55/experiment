@@ -43,4 +43,11 @@ export default {
   height: 800px;
   text-align: left;
 }
+.code {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Roboto Mono", Monaco, courier, monospace;
+  background-color: #f7f7f7;
+}
 </style>
