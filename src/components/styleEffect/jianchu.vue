@@ -35,7 +35,7 @@ export default {
 #myAnimate {
   width: 359px;
   height: 272px;
-  position: fixed;
+  position: absolute;
   left: 45%;
   top: 45%;
   scaleindex: 0;

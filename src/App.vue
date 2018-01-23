@@ -25,7 +25,7 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
   display: flex;
@@ -41,6 +41,11 @@ export default {
 .chart {
   width: 1200px;
   height: 800px;
+  text-align: left;
+}
+.min-chart {
+  width: 800px;
+  height: 600px;
   text-align: left;
 }
 .code {

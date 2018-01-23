@@ -29,7 +29,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "d3": "^3.5.17",
-    "echarts": "^3.8.5",
+    "echarts": "^4.0.2",
     "element-ui": "^2.0.4",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",

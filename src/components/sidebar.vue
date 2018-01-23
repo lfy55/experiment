@@ -23,6 +23,7 @@
         <el-menu-item index="customMap">数据流向图</el-menu-item>
         <el-menu-item index="ringPie1">年轮饼图不均分</el-menu-item>
         <el-menu-item index="ringPie2">年轮饼图均分</el-menu-item>
+        <el-menu-item index="echartsDataSet">Echarts Dataset</el-menu-item>
         <el-menu-item index="g2chart">g2测试图表</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
@@ -32,6 +33,7 @@
         </template>
         <el-menu-item index="jianchu">dom渐出</el-menu-item>
         <el-menu-item index="BFCTest">BFC学习测试</el-menu-item>
+        <el-menu-item index="pauseAnimate">CSS 动画暂停</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

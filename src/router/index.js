@@ -10,10 +10,12 @@ import targetPerson from '@/components/charts/targetPerson'
 import customMap from '@/components/charts/customMapFlow/customMap'
 import ringPie1 from '@/components/charts/ringPie1'
 import ringPie2 from '@/components/charts/ringPie2'
+import echartsDataSet from '@/components/charts/echartsDataSet'
 import g2chart from '@/components/charts/g2chart'
 
 import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
+import pauseAnimate from '@/components/styleEffect/pauseAnimate'
 
 import countryData from '@/components/tables/countryData/index'
 
@@ -89,6 +91,16 @@ export default new Router({
       path: '/BFCTest',
       name: 'BFCTest',
       component: BFCTest
+    },
+    {
+      path: '/echartsDataSet',
+      name: 'echartsDataSet',
+      component: echartsDataSet
+    },
+    {
+      path: '/pauseAnimate',
+      name: 'pauseAnimate',
+      component: pauseAnimate
     }
   ]
 })
