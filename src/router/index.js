@@ -16,6 +16,7 @@ import g2chart from '@/components/charts/g2chart'
 import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
 import pauseAnimate from '@/components/styleEffect/pauseAnimate'
+import floatLay1 from '@/components/styleEffect/floatLay1'
 
 import countryData from '@/components/tables/countryData/index'
 
@@ -101,6 +102,11 @@ export default new Router({
       path: '/pauseAnimate',
       name: 'pauseAnimate',
       component: pauseAnimate
+    },
+    {
+      path: '/floatLay1',
+      name: 'floatLay1',
+      component: floatLay1,
     }
   ]
 })

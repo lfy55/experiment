@@ -34,6 +34,7 @@
         <el-menu-item index="jianchu">dom渐出</el-menu-item>
         <el-menu-item index="BFCTest">BFC学习测试</el-menu-item>
         <el-menu-item index="pauseAnimate">CSS 动画暂停</el-menu-item>
+        <el-menu-item index="floatLay1">FLoat 布局1</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
