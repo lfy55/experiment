@@ -9,13 +9,13 @@
     <p>float方式</p>
     <p>问题是左侧宽度不够灵活，不同的左侧宽度需要修改布局代码</p>
     <div class="lay-float">
-      <div class="lay-l">我是一个左侧固定宽度的元素</div>
+      <div class="lay-l">我是一个左侧固定宽度的元素，我向左浮动</div>
       <div class="lay-r">我是右侧宽度不定的元素，我跟左侧元素产生了一个流动的两列布局</div>
     </div>
     <p>BFC方式</p>
     <div class="lay-bfc">
-      <div class="lay-l">我是一个左侧固定宽度的元素</div>
-      <div class="lay-r">我是右侧宽度不定的元素，我跟左侧元素产生了一个流动的两列布局</div>
+      <div class="lay-l">我是一个左侧固定宽度的元素，我向左浮动</div>
+      <div class="lay-r">我是右侧宽度不定的元素，我跟左侧元素产生了一个流动的两列布局，为此元素生成 BFC 以后lay-l的浮动将不能影响到当前元素，所以当前元素不会产生环绕</div>
     </div>
   </div>
 </template>
@@ -67,10 +67,12 @@ export default {
   box-sizing: border-box;
   border: #ffbb00 1px solid;
   margin-right: 30px;
+  /* 只能使用浮动，不能使用绝对定位来让左侧列固定 */
   float: left;
 }
 .lay-bfc > .lay-r {
   /* overflow来生成BFC不够合适，探寻其他能够生成BFC的方法 */
+  /* 为此元素生成 BFC 以后lay-l的浮动将不能影响到当前元素，所以当前元素不会产生环绕 */
   /* http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/ */
   /* overflow: auto; */
 

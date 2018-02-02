@@ -17,6 +17,7 @@ import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
 import pauseAnimate from '@/components/styleEffect/pauseAnimate'
 import floatLay1 from '@/components/styleEffect/floatLay1'
+import aboutBg from '@/components/styleEffect/aboutBg'
 
 import countryData from '@/components/tables/countryData/index'
 
@@ -107,6 +108,11 @@ export default new Router({
       path: '/floatLay1',
       name: 'floatLay1',
       component: floatLay1,
+    },
+    {
+      path: '/aboutBg',
+      name: 'aboutBg',
+      component: aboutBg
     }
   ]
 })
