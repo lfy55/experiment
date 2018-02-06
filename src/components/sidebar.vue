@@ -36,6 +36,7 @@
         <el-menu-item index="pauseAnimate">CSS 动画暂停</el-menu-item>
         <el-menu-item index="floatLay1">FLoat 布局1</el-menu-item>
         <el-menu-item index="aboutBg">关于背景</el-menu-item>
+        <el-menu-item index="menu">菜单nav</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

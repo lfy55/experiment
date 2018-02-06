@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import sfTab1 from '@/components/tables/sfTab1'
-import sfTab2 from '@/components/tables/sfTab2'
-import fxqTab from '@/components/tables/fxqTab'
+
 import linearChart from '@/components/charts/linearBar'
 import piecewiseBar from '@/components/charts/piecewiseBar'
 import targetPerson from '@/components/charts/targetPerson'
@@ -18,7 +16,11 @@ import BFCTest from '@/components/styleEffect/BFCTest'
 import pauseAnimate from '@/components/styleEffect/pauseAnimate'
 import floatLay1 from '@/components/styleEffect/floatLay1'
 import aboutBg from '@/components/styleEffect/aboutBg'
+import menu from '@/components/styleEffect/menu'
 
+import sfTab1 from '@/components/tables/sfTab1'
+import sfTab2 from '@/components/tables/sfTab2'
+import fxqTab from '@/components/tables/fxqTab'
 import countryData from '@/components/tables/countryData/index'
 
 Vue.use(Router)
@@ -113,6 +115,11 @@ export default new Router({
       path: '/aboutBg',
       name: 'aboutBg',
       component: aboutBg
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: menu
     }
   ]
 })
