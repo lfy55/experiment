@@ -25,6 +25,7 @@
         <el-menu-item index="ringPie2">年轮饼图均分</el-menu-item>
         <el-menu-item index="echartsDataSet">Echarts Dataset</el-menu-item>
         <el-menu-item index="g2chart">g2测试图表</el-menu-item>
+        <el-menu-item index="testD3">测试各种D3接口</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
