@@ -26,6 +26,7 @@
         <el-menu-item index="echartsDataSet">Echarts Dataset</el-menu-item>
         <el-menu-item index="g2chart">g2测试图表</el-menu-item>
         <el-menu-item index="testD3">测试各种D3接口</el-menu-item>
+        <el-menu-item index="forLitteArea">echarts小区域地图选中</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
