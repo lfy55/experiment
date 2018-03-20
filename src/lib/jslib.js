@@ -154,7 +154,7 @@ export function getExplore() {
  */
 export function getOS() {
   var userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
-  var vendor = 'navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase() || '';
+  // var vendor = 'navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase() || '';
   var appVersion = 'navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase() || '';
 
   if (/mac/i.test(appVersion)) return 'MacOSX'
