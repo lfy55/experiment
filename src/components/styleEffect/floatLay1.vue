@@ -32,7 +32,6 @@ export default {
 }
 .float-lay2 {
   margin-top: 30px;
-  overflow: hidden;
 }
 .block {
   width: 100px;

@@ -130,13 +130,13 @@ export function getExplore() {
   var sys = {},
     ua = navigator.userAgent.toLowerCase(),
     s;
-  (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1] :
+  (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
     (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1] :
-      (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
-        (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
-          (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
-            (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
-              (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
+    (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
+    (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
+    (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
+    (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
+    (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
   // 根据关系进行判断
   if (sys.ie) return ('IE: ' + sys.ie)
   if (sys.edge) return ('EDGE: ' + sys.edge)
@@ -192,11 +192,11 @@ var requestAnimationFrame = (function () {
 })();
 
 /**
-* 
-* @desc  在${duration}时间内，滚动条平滑滚动到${to}指定位置
-* @param {Number} to 
-* @param {Number} duration 
-*/
+ * 
+ * @desc  在${duration}时间内，滚动条平滑滚动到${to}指定位置
+ * @param {Number} to 
+ * @param {Number} duration 
+ */
 export function scrollTo(to, duration) {
   if (duration < 0) {
     setScrollTop(to);
@@ -347,10 +347,10 @@ var keyCodeMap = {
   222: '\''
 };
 /**
-* @desc 根据keycode获得键名
-* @param  {Number} keycode 
-* @return {String}
-*/
+ * @desc 根据keycode获得键名
+ * @param  {Number} keycode 
+ * @return {String}
+ */
 export function getKeyName(keycode) {
   if (keyCodeMap[keycode]) {
     return keyCodeMap[keycode];
@@ -514,7 +514,7 @@ export function digitUppercase(n) {
  * @param  {String} fmt 需要格式化成的格式 eg: yyyy-MM-dd hh:mm:ss
  * @return {String}
  */
-export function formatTime(time, fmt) {
+export function formatTime(time, fmt = "yyyy-MM-dd hh:mm:ss") {
   if (Object.prototype.toString.call(time) !== "[object Date]") {
     time = new Date(time)
   }

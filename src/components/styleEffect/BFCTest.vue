@@ -34,6 +34,7 @@ export default {
 #test1 {
   width: 500px;
   border: 1px #ffbb00 solid;
+  overflow: hidden;
 }
 .margin-10 {
   width: 300px;
@@ -41,6 +42,7 @@ export default {
   height: 20px;
   margin: 10px;
   overflow: hidden;
+  float: left;
 }
 .lay-float,
 .lay-bfc {
