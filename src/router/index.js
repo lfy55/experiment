@@ -12,6 +12,7 @@ import echartsDataSet from '@/components/charts/echartsDataSet'
 import g2chart from '@/components/charts/g2chart'
 import testD3 from "@/components/charts/testD3"
 import forLitteArea from '@/components/charts/forLitteArea'
+import graphgl from '@/components/charts/graphgl'
 
 import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
@@ -19,6 +20,7 @@ import pauseAnimate from '@/components/styleEffect/pauseAnimate'
 import floatLay1 from '@/components/styleEffect/floatLay1'
 import aboutBg from '@/components/styleEffect/aboutBg'
 import menu from '@/components/styleEffect/menu'
+import cssworld from '@/components/styleEffect/cssworld'
 
 import sfTab1 from '@/components/tables/sfTab1'
 import sfTab2 from '@/components/tables/sfTab2'
@@ -132,6 +134,16 @@ export default new Router({
       path: '/forLitteArea',
       name: 'forLitteArea',
       component: forLitteArea,
+    },
+    {
+      path: '/cssworld',
+      name: 'cssworld',
+      component: cssworld,
+    },
+    {
+      path: '/graphgl',
+      name: 'graphgl',
+      component: graphgl,
     },
   ]
 })

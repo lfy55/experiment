@@ -45,6 +45,7 @@ export default {
   margin: 10px;
   padding: 10px;
   color: #000;
+  background-origin: border-box;
   border: 10px #000 dotted;
 }
 .test-list li:nth-child(2) {

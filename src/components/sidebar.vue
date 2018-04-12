@@ -27,6 +27,7 @@
         <el-menu-item index="g2chart">g2测试图表</el-menu-item>
         <el-menu-item index="testD3">测试各种D3接口</el-menu-item>
         <el-menu-item index="forLitteArea">echarts小区域地图选中</el-menu-item>
+        <el-menu-item index="graphgl">echarts webGL关系图</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
@@ -39,6 +40,7 @@
         <el-menu-item index="floatLay1">FLoat 布局1</el-menu-item>
         <el-menu-item index="aboutBg">关于背景</el-menu-item>
         <el-menu-item index="menu">菜单nav</el-menu-item>
+        <el-menu-item index="cssworld">CSS世界</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
