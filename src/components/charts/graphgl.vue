@@ -59,6 +59,7 @@ export default {
           focusNodeAdjacency: false,
           symbolSize: 12,
           draggable: false,
+          focusNodeAdjacency: true,
           legendHoverLink: false,
           data: this.nodes,
           categories: this.categories,
