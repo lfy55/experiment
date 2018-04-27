@@ -16,6 +16,7 @@
     "url": "https://github.com/lfy55/experiment.git"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

@@ -39,7 +39,7 @@ export default {
   background-size: contain;
 }
 .bg-clip {
-  background: #66f;
+  background: url(../../assets/20180123173538.png);
   width: 300px;
   height: 200px;
   margin: 10px;

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <canvas class="fireworks" ref="canvas"></canvas>
     <div class="sidebar">
       <sidebar></sidebar>
     </div>
@@ -11,12 +12,17 @@
 
 <script>
 import sidebar from "./components/sidebar"
+import { initWork } from './lib/firework.js'
 
 export default {
   name: "app",
   components: {
     sidebar
-  }
+  },
+  mounted() {
+    let fireWork = initWork(this.$refs.canvas)
+    fireWork.setCanvasSize()
+  },
 };
 </script>
 
@@ -54,5 +60,14 @@ export default {
   padding-right: 10px;
   font-family: "Roboto Mono", Monaco, courier, monospace;
   background-color: #f7f7f7;
+}
+
+.fireworks {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 0;
 }
 </style>
