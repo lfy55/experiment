@@ -27,6 +27,8 @@ import sfTab2 from '@/components/tables/sfTab2'
 import fxqTab from '@/components/tables/fxqTab'
 import countryData from '@/components/tables/countryData/index'
 
+import testBus from '@/components/others/testBus'
+
 Vue.use(Router)
 
 export default new Router({
@@ -145,5 +147,10 @@ export default new Router({
       name: 'graphgl',
       component: graphgl,
     },
+    {
+      path: '/testBus',
+      name: 'testBus',
+      component: testBus,
+    }
   ]
 })

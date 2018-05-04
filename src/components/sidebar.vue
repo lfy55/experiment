@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <i :class="[isCollapse?'el-icon-d-arrow-right':'el-icon-d-arrow-left']" @click="isCollapse = !isCollapse"></i> -->
-    <el-menu class="el-menu-vertical-demo" @select="changeSelect" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu class="el-menu-vertical-demo" :unique-opened="true" @select="changeSelect" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-date"></i>
@@ -41,6 +41,13 @@
         <el-menu-item index="aboutBg">关于背景</el-menu-item>
         <el-menu-item index="menu">菜单nav</el-menu-item>
         <el-menu-item index="cssworld">CSS世界</el-menu-item>
+      </el-submenu>
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="el-icon-menu"></i>
+          <span slot="title">测试想法</span>
+        </template>
+        <el-menu-item index="testBus">测试BUS eventEmitter</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
