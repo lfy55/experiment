@@ -28,6 +28,7 @@
         <el-menu-item index="testD3">测试各种D3接口</el-menu-item>
         <el-menu-item index="forLitteArea">echarts小区域地图选中</el-menu-item>
         <el-menu-item index="graphgl">echarts webGL关系图</el-menu-item>
+        <el-menu-item index="orgChart">可编辑的组织关系图</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">

@@ -13,6 +13,7 @@ import g2chart from '@/components/charts/g2chart'
 import testD3 from "@/components/charts/testD3"
 import forLitteArea from '@/components/charts/forLitteArea'
 import graphgl from '@/components/charts/graphgl'
+import orgChart from '@/components/charts/orgChart'
 
 import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
@@ -151,6 +152,11 @@ export default new Router({
       path: '/testBus',
       name: 'testBus',
       component: testBus,
+    },
+    {
+      path: '/orgChart',
+      name: 'orgChart',
+      component: orgChart,
     }
   ]
 })
