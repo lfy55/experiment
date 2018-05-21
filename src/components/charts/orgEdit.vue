@@ -2,9 +2,9 @@
   <div class="orgChart-container" id="chart-container" @click="clickNode"></div>
 </template>
 <script>
-import "@/lib/orgchartstyle.css"
+import "@/lib/orgchart/orgchartstyle.css"
 
-import OrgChart from '@/lib/orgchart.js'
+import OrgChart from '@/lib/orgchart/orgchart.js'
 import * as _ from 'lodash'
 
 const closest = (el, fn) => {
@@ -22,7 +22,7 @@ export default {
       selectedNode: null,
       defaultOptions: {
         chartContainer: '#chart-container',
-        createNode: function (node, data) {
+        createNode: function (node) {
           node.id = getId()
         }
       },
@@ -46,7 +46,7 @@ export default {
     createNode: { type: Function },
     exportButton: { type: Boolean, default: false },
     exportButtonName: { type: String, default: 'Export' },
-    exportFilename: { type: String },
+    exportFilename: { type: String, default: 'chart' },
     chartClass: { type: String, default: '' },
     draggable: { type: Boolean, default: false },
     dropCriteria: { type: Function },
@@ -55,10 +55,6 @@ export default {
   mounted() {
     let orgOption = _.merge(this.defaultOptions, this.$props)
     this.orgchart = new OrgChart(orgOption)
-    // this.$nextTick(() => {
-    //   bindEventHandler('.node', 'click', clickNode, '#chart-container')
-    //   bindEventHandler('.orgchart', 'click', clickChart, '#chart-container')
-    // })
   },
   methods: {
     clickNode(event) {
@@ -73,14 +69,13 @@ export default {
       }
     },
     addNode(nodeName) {
-      console.log('sqk=============>addNode')
       let chartContainer = document.getElementById('chart-container')
       if (!chartContainer.children.length && nodeName) {
         let orgchart = new OrgChart({
           'chartContainer': '#chart-container',
           'data': { 'name': nodeName },
           'parentNodeSymbol': 'fa-th-large',
-          'createNode': function (node, data) {
+          'createNode': function (node) {
             node.id = getId()
           }
         })
@@ -110,7 +105,6 @@ export default {
       }
     },
     deleteNode() {
-      console.log('sqk=============>deleteNode')
       if (!this.selectedNode) {
         return
       }

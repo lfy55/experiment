@@ -1,6 +1,6 @@
 <template>
   <div class="orgChart">
-    <org-edit :data="chartData" :toggle-siblings-resp="true" :draggable="true" :status="status" :newNodeName="nodeName" @selectedNode="changeSeleteNode"></org-edit>
+    <org-edit :data="chartData" :toggle-siblings-resp="true" :exportButton="true" :direction="'t2b'" :draggable="true" :status="status" :newNodeName="nodeName" @selectedNode="changeSeleteNode"></org-edit>
     <br> 当前选中的点：{{selectedName}}
     <el-input v-model="nodeName" placeholder="请输入内容"></el-input>
     <el-button @click="addNode">添加</el-button>

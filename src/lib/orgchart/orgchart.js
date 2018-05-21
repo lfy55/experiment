@@ -1,3 +1,5 @@
+import html2canvas from 'html2canvas'
+
 export default class OrgChart {
   constructor(options) {
     this._name = 'OrgChart';
@@ -1575,7 +1577,7 @@ export default class OrgChart {
       mask.classList.remove('hidden');
     }
     chartContainer.classList.add('canvasContainer');
-    window.html2canvas(sourceChart, {
+    html2canvas(sourceChart, {
       'width': flag ? sourceChart.clientHeight : sourceChart.clientWidth,
       'height': flag ? sourceChart.clientWidth : sourceChart.clientHeight,
       'onclone': function (cloneDoc) {

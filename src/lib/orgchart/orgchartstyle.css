@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./fontawesome-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-chevron-left:before {
+  content: "\f053";
+}
+
+.fa-chevron-right:before {
+  content: "\f054";
+}
+
+.fa-chevron-up:before {
+  content: "\f077";
+}
+
+.fa-chevron-down:before {
+  content: "\f078";
+}
+
 #chart-container {
   position: relative;
   display: inline-block;
@@ -231,21 +263,21 @@
 .orgchart.b2t .node .title {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
-  -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  -webkit-transform-origin: center;
+  transform-origin: center;
 }
 
 .orgchart.l2r .node .title {
-  -webkit-transform: rotate(-90deg) translate(-40px, -40px) rotateY(180deg);
-  transform: rotate(-90deg) translate(-40px, -40px) rotateY(180deg);
+  -webkit-transform: rotate(-90deg) translate(-40px, -35px) rotateY(180deg);
+  transform: rotate(-90deg) translate(-40px, -35px) rotateY(180deg);
   -webkit-transform-origin: bottom center;
   transform-origin: bottom center;
   width: 120px;
 }
 
 .orgchart.r2l .node .title {
-  -webkit-transform: rotate(-90deg) translate(-40px, -40px);
-  transform: rotate(-90deg) translate(-40px, -40px);
+  -webkit-transform: rotate(-90deg) translate(-40px, -35px);
+  transform: rotate(-90deg) translate(-40px, -35px);
   -webkit-transform-origin: bottom center;
   transform-origin: bottom center;
   width: 120px;
