@@ -30,6 +30,7 @@
         <el-menu-item index="graphgl">echarts webGL关系图</el-menu-item>
         <el-menu-item index="orgChart">可编辑的组织关系图</el-menu-item>
         <el-menu-item index="testMap">可选中或下钻的地图</el-menu-item>
+        <el-menu-item index="testBar">可选中的柱状图</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">

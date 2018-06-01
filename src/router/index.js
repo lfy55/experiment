@@ -31,6 +31,7 @@ import countryData from '@/components/tables/countryData/index'
 import testBus from '@/components/others/testBus'
 
 import testMap from '@/pages/testMap'
+import testBar from '@/pages/testBar'
 
 Vue.use(Router)
 
@@ -164,6 +165,11 @@ export default new Router({
       path: '/testMap',
       name: 'testMap',
       component: testMap,
+    },
+    {
+      path: '/testBar',
+      name: 'testBar',
+      component: testBar,
     }
   ]
 })
