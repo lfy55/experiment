@@ -40,7 +40,7 @@
     "d3": "^3.5.17",
     "echarts": "^4.0.4",
     "echarts-gl": "^1.1.0",
-    "element-ui": "^2.0.4",
+    "element-ui": "^2.4.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",

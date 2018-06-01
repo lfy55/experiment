@@ -9,7 +9,7 @@
 
 <script>
 import echarts from "echarts"
-import chinaMap from '@/assets/mapData/china.json'
+import chinaMap from '@/assets/china.json'
 
 echarts.registerMap('china', chinaMap)
 
@@ -168,6 +168,8 @@ export default {
         let clickName = param.name
         this.selectedArea = param.selected[clickName] ? clickName : ''
       }
+
+      this.$emit('changeSelected', { area: this.selectedArea })
     },
     mapClick(param) {
       console.log('地图点击事件触发：', param)
@@ -179,10 +181,15 @@ export default {
         })
       }
     },
+    cancelSelect(name) {
+      this.myChart.dispatchAction({
+          type: 'geoToggleSelect',
+          name: name
+        })
+    }
   },
 }
 </script>
 
 <style scoped>
-
 </style>

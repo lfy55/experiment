@@ -30,6 +30,8 @@ import countryData from '@/components/tables/countryData/index'
 
 import testBus from '@/components/others/testBus'
 
+import testMap from '@/pages/testMap'
+
 Vue.use(Router)
 
 export default new Router({
@@ -157,6 +159,11 @@ export default new Router({
       path: '/orgChart',
       name: 'orgChart',
       component: orgChart,
+    },
+    {
+      path: '/testMap',
+      name: 'testMap',
+      component: testMap,
     }
   ]
 })

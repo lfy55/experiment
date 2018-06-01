@@ -11,6 +11,8 @@
 import G2 from '@antv/g2'
 import DataSet from '@antv/data-set'
 
+G2.track(false)
+
 const data = [
   { genre: 'Sports', sold: 275 },
   { genre: 'Strategy', sold: 115 },

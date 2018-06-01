@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <i :class="[isCollapse?'el-icon-d-arrow-right':'el-icon-d-arrow-left']" @click="isCollapse = !isCollapse"></i> -->
-    <el-menu class="el-menu-vertical-demo" :unique-opened="true" @select="changeSelect" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu class="el-menu-vertical-demo" :unique-opened="true" router :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-date"></i>
@@ -29,6 +29,7 @@
         <el-menu-item index="forLitteArea">echarts小区域地图选中</el-menu-item>
         <el-menu-item index="graphgl">echarts webGL关系图</el-menu-item>
         <el-menu-item index="orgChart">可编辑的组织关系图</el-menu-item>
+        <el-menu-item index="testMap">可选中或下钻的地图</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
