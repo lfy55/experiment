@@ -80,6 +80,14 @@ export default {
   methods: {
     changeArea(params) {
       this.selectedArea = params.area
+      setTimeout(() => {
+        this.mapData = [
+          { name: '南京市', value: randomData() },
+          { name: '无锡市', value: randomData() },
+          { name: '苏州市', value: randomData() },
+          { name: '常州市', value: randomData() },
+        ]
+      }, 1000)
     },
     cancelSelect() {
       this.$refs.mapConponents.cancelSelect(this.selectedArea)

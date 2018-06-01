@@ -193,19 +193,23 @@ export default {
         let mapJSON = await axios.get(`./static/mapData/${mapName}.json`)
         echarts.registerMap(mapName, mapJSON.data)
       }
+      let markData = this.isDirll ? [] : this.litteArea.map(item => {
+        let target = this.dataconfig.find(it => it.name === item.name)
+        if (target) { item.value = target.value }
+        return target ? item : {}
+      }).filter(item => item.value && item.name)
       this.myChart.setOption({
         geo: {
           map: mapName,
           selectedMode: this.isDirll ? false : 'single'
         },
-        serise: [{
-          markPoint: {
-            data: this.isDirll ? [] : this.litteArea.map(item => {
-              item.value = this.dataconfig.find(it => it.name === item.name).value
-              return item
-            }),
-          }
-        }],
+        // serise: [{
+        //   data: this.dataconfig,
+        //   markPoint: {
+        //     symbolSize: this.isDirll ? 0 : 30,
+        //     data: markData,
+        //   }
+        // }],
       })
     },
     mapClick(param) {
@@ -234,14 +238,17 @@ export default {
   watch: {
     dataconfig: {
       handler() {
+        let markData = this.isDirll ? [] : this.litteArea.map(item => {
+          let target = this.dataconfig.find(it => it.name === item.name)
+          if (target) { item.value = target.value }
+          return target ? item : {}
+        }).filter(item => item.value && item.name)
         this.myChart.setOption({
           series: {
             data: this.dataconfig,
             markPoint: {
-              data: this.isDirll ? [] : this.litteArea.map(item => {
-                item.value = this.dataconfig.find(it => it.name === item.name).value
-                return item
-              }),
+              symbolSize: this.isDirll ? 0 : 30,
+              data: markData,
             }
           }
         })
