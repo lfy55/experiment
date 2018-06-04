@@ -143,8 +143,10 @@ export default {
               symbol: 'circle',
               symbolSize: 30,
               data: this.isDirll ? [] : this.litteArea.map(item => {
-                item.value = this.dataconfig.find(it => it.name === item.name).value
-                return item
+                let newItem = Object.assign({}, item)
+                let target = this.dataconfig.find(it => it.name === item.name)
+                if (target) { newItem.value = target.value }
+                return newItem
               }),
               itemStyle: {
                 color: '#aaa',
@@ -193,23 +195,16 @@ export default {
         let mapJSON = await axios.get(`./static/mapData/${mapName}.json`)
         echarts.registerMap(mapName, mapJSON.data)
       }
-      let markData = this.isDirll ? [] : this.litteArea.map(item => {
-        let target = this.dataconfig.find(it => it.name === item.name)
-        if (target) { item.value = target.value }
-        return target ? item : {}
-      }).filter(item => item.value && item.name)
       this.myChart.setOption({
         geo: {
           map: mapName,
           selectedMode: this.isDirll ? false : 'single'
         },
-        // serise: [{
-        //   data: this.dataconfig,
-        //   markPoint: {
-        //     symbolSize: this.isDirll ? 0 : 30,
-        //     data: markData,
-        //   }
-        // }],
+        series: [{
+            markPoint: {
+              symbolSize: this.isDirll ? 0 : 30
+            }
+          }]
       })
     },
     mapClick(param) {
@@ -239,18 +234,18 @@ export default {
     dataconfig: {
       handler() {
         let markData = this.isDirll ? [] : this.litteArea.map(item => {
+          let newItem = Object.assign({}, item)
           let target = this.dataconfig.find(it => it.name === item.name)
-          if (target) { item.value = target.value }
-          return target ? item : {}
-        }).filter(item => item.value && item.name)
+          if (target) { newItem.value = target.value }
+          return newItem
+        })
         this.myChart.setOption({
-          series: {
+          series: [{
             data: this.dataconfig,
             markPoint: {
-              symbolSize: this.isDirll ? 0 : 30,
               data: markData,
             }
-          }
+          }]
         })
       },
       deep: true
