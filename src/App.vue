@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <canvas class="fireworks" ref="canvas"></canvas>
-    <div class="sidebar">
+    <div class="scroll sidebar">
       <sidebar></sidebar>
     </div>
-    <div class="content-wrapper">
+    <div class="scroll content-wrapper">
       <router-view></router-view>
     </div>
   </div>
@@ -27,7 +27,10 @@ export default {
 </script>
 
 <style>
+html,
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
@@ -35,10 +38,10 @@ body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 10px;
   display: flex;
+  height: calc(100% - 20px);
 }
 .sidebar {
   width: 280px;
@@ -47,6 +50,8 @@ body {
 .content-wrapper {
   flex-grow: 1;
   margin-left: 30px;
+  overflow: auto;
+  margin-right: 5px;
 }
 .chart {
   width: 1200px;
@@ -73,5 +78,26 @@ body {
   top: 0;
   right: 0;
   height: 0;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #f5f5f5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/*定义滑块 内阴影+圆角*/
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #aaa;
 }
 </style>
