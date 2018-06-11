@@ -14,11 +14,13 @@ const litteAreaName = {
   '香港': '港',
   '澳门': '澳',
 }
-const litterAreas = [{ name: '北京', coord: [116.46, 39.92] },
-{ name: '上海', coord: [121.48, 31.22] },
-{ name: '天津', coord: [117.190182, 39.125596] },
-{ name: '香港', coord: [114.173355, 22.320048], symbolOffset: ['45%', '45%'] },
-{ name: '澳门', coord: [113.54909, 22.198951], symbolOffset: ['-30%', '80%'] }]
+const litterAreas = [
+  { name: '北京', coord: [116.46, 39.92] },
+  { name: '上海', coord: [121.48, 31.22] },
+  { name: '天津', coord: [117.190182, 39.125596] },
+  { name: '香港', coord: [114.173355, 22.320048], symbolOffset: ['45%', '45%'] },
+  { name: '澳门', coord: [113.54909, 22.198951], symbolOffset: ['-30%', '80%'] }
+]
 
 const canDrill = {
   "安徽": 'anhui',
@@ -156,7 +158,7 @@ export default {
                 show: true,
                 color: '#ff0000',
                 formatter(params) {
-                  return litteAreaName[params.name]
+                  return litteAreaName[params.name] || ''
                 },
                 fontSize: 14,
                 position: 'inside',
@@ -201,10 +203,10 @@ export default {
           selectedMode: this.isDirll ? false : 'single'
         },
         series: [{
-            markPoint: {
-              symbolSize: this.isDirll ? 0 : 30
-            }
-          }]
+          markPoint: {
+            symbolSize: this.isDirll ? 0 : 30
+          }
+        }]
       })
     },
     mapClick(param) {
