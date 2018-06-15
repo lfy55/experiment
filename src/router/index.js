@@ -32,6 +32,7 @@ import testBus from '@/components/others/testBus'
 
 import testMap from '@/pages/testMap'
 import testBar from '@/pages/testBar'
+import testQx from '@/pages/testQx'
 
 Vue.use(Router)
 
@@ -170,6 +171,11 @@ export default new Router({
       path: '/testBar',
       name: 'testBar',
       component: testBar,
+    },
+    {
+      path: "/testQx",
+      name: 'testQx',
+      component: testQx
     }
   ]
 })

@@ -45,6 +45,7 @@ body {
 }
 .sidebar {
   width: 280px;
+  overflow: auto;
   flex-shrink: 0;
 }
 .content-wrapper {
