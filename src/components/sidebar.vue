@@ -32,6 +32,7 @@
         <el-menu-item index="testMap">可选中或下钻的地图</el-menu-item>
         <el-menu-item index="testBar">可选中的柱状图</el-menu-item>
         <el-menu-item index="testQx">可选中的流向图</el-menu-item>
+        <el-menu-item index="testLine">折线图</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">

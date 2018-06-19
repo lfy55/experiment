@@ -14,6 +14,7 @@ export default {
       default: {
         xAxis: [],
         data: [],
+        name: '',
       },
     },
   },
@@ -36,10 +37,10 @@ export default {
   },
   methods: {
     initChart() {
-      let len = this.dataconfig.xAxis.length
-      this.dataconfig.data.forEach(it => {
-        this.max = it > this.max ? it : this.max
-      })
+      // let len = this.dataconfig.xAxis.length
+      // this.dataconfig.data.forEach(it => {
+      //   this.max = it > this.max ? it : this.max
+      // })
 
       let option = {
         tooltip: {
@@ -48,7 +49,7 @@ export default {
             type: 'shadow'
           },
           formatter: function (data) {
-            return data[1].seriesName + '<br>' + data[1].name + ':' + data[1].value;
+            return data[0].seriesName + '<br>' + data[0].name + ':' + data[0].value;
           }
         },
         grid: [{
@@ -61,15 +62,16 @@ export default {
         }],
         calculable: false,
         yAxis: [{
-          show: false,
+          show: true,
           gridIndex: 0,
           type: 'value',
           name: '数据值',
           axisLabel: {
+            show: true,
+            color: '#000',
+          },
+          axisLine: {
             show: false,
-            textStyle: {
-              color: '#5BD75B'
-            }
           },
           splitArea: {
             show: false
@@ -89,7 +91,10 @@ export default {
             interval: 0,
             //rotate: 30,
             fontSize: 12,
-            color: '#ff9d00',
+            color: '#000000',
+          },
+          axisLine: {
+            show: false,
           },
           splitArea: {
             show: false
@@ -103,43 +108,46 @@ export default {
           type: 'category',
           data: this.dataconfig.xAxis || []
         }],
-        series: [{
-          type: 'bar',
-          //barMaxWidth: 20,
-          itemStyle: {
-            normal: {
-              color: 'rgb(49, 49, 49)'
+        series: [
+          // {
+          //   type: 'bar',
+          //   //barMaxWidth: 20,
+          //   itemStyle: {
+          //     normal: {
+          //       color: 'rgb(49, 49, 49)'
+          //     },
+          //   },
+          //   xAxisIndex: 0,
+          //   yAxisIndex: 0,
+          //   zlevel: 1,
+          //   barGap: '-100%',
+          //   barCategoryGap: '65%',
+          //   data: new Array(len).fill(this.max * 1.1),
+          //   abimation: false
+          // },
+          {
+            name: this.dataconfig.name || '',
+            type: 'bar',
+            xAxisIndex: 0,
+            yAxisIndex: 0,
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(
+                  0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgb(46,161,248)'
+                  }, {
+                    offset: 1,
+                    color: 'rgb(25,145,235)'
+                  }]
+                )
+              }
             },
-          },
-          xAxisIndex: 0,
-          yAxisIndex: 0,
-          zlevel: 1,
-          barGap: '-100%',
-          barCategoryGap: '65%',
-          data: new Array(len).fill(this.max * 1.1),
-          abimation: false
-        }, {
-          name: this.dataconfig.name || '',
-          type: 'bar',
-          xAxisIndex: 0,
-          yAxisIndex: 0,
-          itemStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(
-                0, 0, 0, 1, [{
-                  offset: 0,
-                  color: '#77c0fe'
-                }, {
-                  offset: 1,
-                  color: '#0083c6'
-                }]
-              )
-            }
-          },
-          zlevel: 5,
-          z: 3,
-          data: this.dataconfig.data || []
-        }]
+            zlevel: 5,
+            z: 3,
+            data: this.dataconfig.data || []
+          }
+        ]
       }
 
       this.myChart.setOption(option)
@@ -163,57 +171,62 @@ export default {
         xAxis: [{
           axisLabel: {
             color: (param) => {
-              return selectedBar === param ? '#90EE90' : '#ff9d00'
+              return selectedBar === param ? 'rgb(36,176,13)' : '#000000'
             },
           }
         }],
-        series: [{}, {
-          itemStyle: {
-            normal: {
-              color: (param) => {
-                let normalColor = new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1, [{
-                    offset: 0,
-                    color: '#77c0fe'
-                  }, {
-                    offset: 1,
-                    color: '#0083c6'
-                  }]
-                ), selectedColor = new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1, [{
-                    offset: 0,
-                    color: '#77c0fe'
-                  }, {
-                    offset: 1,
-                    color: '#90EE90'
-                  }]
-                )
-                return param.name === selectedBar ? selectedColor : normalColor
+        series: [
+          // {},
+          {
+            itemStyle: {
+              normal: {
+                color: (param) => {
+                  let normalColor = new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1, [{
+                      offset: 0,
+                      color: 'rgb(46,161,248)'
+                    }, {
+                      offset: 1,
+                      color: 'rgb(25,145,235)'
+                    }]
+                  ), selectedColor = new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1, [{
+                      offset: 0,
+                      color: 'rgb(89,218,68)'
+                    }, {
+                      offset: 1,
+                      color: 'rgb(36,176,13)'
+                    }]
+                  )
+                  return param.name === selectedBar ? selectedColor : normalColor
+                }
               }
-            }
-          },
-        }]
+            },
+          }]
       })
     },
   },
   watch: {
     dataconfig: {
       handler() {
-        let len = this.dataconfig.xAxis.length
-        this.max = 0
-        this.dataconfig.data.forEach(it => {
-          this.max = it > this.max ? it : this.max;
-        })
+        // let len = this.dataconfig.xAxis.length
+        // this.max = 0
+        // this.dataconfig.data.forEach(it => {
+        //   this.max = it > this.max ? it : this.max;
+        // })
         this.myChart.setOption({
           xAxis: [{
             data: this.dataconfig.xAxis || []
           }],
-          series: [{
-            data: new Array(len).fill(this.max * 1.1)
-          }, {
-            name: this.dataconfig.name || '',
-            data: this.dataconfig.data || [],
-          }]
+          series: [
+            // {
+            //   data: new Array(len).fill(this.max * 1.1)
+            // },
+            {
+              name: this.dataconfig.name || '',
+              data: this.dataconfig.data || [],
+            }
+          ]
         })
         if (this.selectedBar) {
           this.upSelect()

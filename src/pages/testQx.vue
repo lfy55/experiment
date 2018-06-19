@@ -33,6 +33,8 @@ function getData() {
     { name: '长春', value: randomData() },
     { name: '包头', value: randomData() },
     { name: '重庆', value: randomData() },
+    { name: '亚洲', value: randomData() },
+    { name: '欧洲', value: randomData() },
     { name: '常州', value: randomData() }
   ]
 
@@ -46,6 +48,8 @@ function getData() {
     { name: '长春', value: randomData() },
     { name: '包头', value: randomData() },
     { name: '重庆', value: randomData() },
+    { name: '亚洲', value: randomData() },
+    { name: '欧洲', value: randomData() },
     { name: '常州', value: randomData() }
   ]
 
