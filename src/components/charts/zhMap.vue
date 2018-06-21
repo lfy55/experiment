@@ -7,6 +7,8 @@
 import echarts from "echarts"
 import axios from 'axios'
 
+import markImg from '@/assets/markpoint.png'
+
 const litteAreaName = {
   '北京': '京',
   '天津': '津',
@@ -15,9 +17,9 @@ const litteAreaName = {
   '澳门': '澳',
 }
 const litterAreas = [
-  { name: '北京', coord: [116.46, 39.92] },
+  { name: '北京', coord: [116.45, 39.93] },
   { name: '上海', coord: [121.48, 31.22] },
-  { name: '天津', coord: [117.190182, 39.125596] },
+  { name: '天津', coord: [117.600282, 38.555496] },
   { name: '香港', coord: [114.173355, 22.320048], symbolOffset: ['45%', '45%'] },
   { name: '澳门', coord: [113.54909, 22.198951], symbolOffset: ['-30%', '80%'] }
 ]
@@ -142,8 +144,8 @@ export default {
             geoIndex: 0,
             data: this.dataconfig,
             markPoint: {
-              symbol: 'circle',
-              symbolSize: 30,
+              symbol: `image://${markImg}`,
+              symbolSize: 24,
               data: this.isDirll ? [] : this.litteArea.map(item => {
                 let newItem = Object.assign({}, item)
                 let target = this.dataconfig.find(it => it.name === item.name)
