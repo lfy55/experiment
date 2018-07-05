@@ -16,9 +16,11 @@
     "url": "https://github.com/lfy55/experiment.git"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^17.2.0",
     "animejs": "^2.2.0",
     "axios": "^0.18.0",
     "html2canvas": "^1.0.0-alpha.12",
+    "three": "^0.94.0",
     "vue": "^2.5.2",
     "vue-orgchart": "^1.1.6",
     "vue-router": "^3.0.1"

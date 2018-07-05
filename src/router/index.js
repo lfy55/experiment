@@ -34,6 +34,7 @@ import testMap from '@/pages/testMap'
 import testBar from '@/pages/testBar'
 import testQx from '@/pages/testQx'
 import testLine from '@/pages/testLine'
+import cart_3d from '@/pages/cart_3d'
 
 Vue.use(Router)
 
@@ -182,6 +183,11 @@ export default new Router({
       path: "/testLine",
       name: 'testLine',
       component: testLine
+    },
+    {
+      path: "/cart_3d",
+      name: 'cart_3d',
+      component: cart_3d
     }
   ]
 })
