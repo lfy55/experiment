@@ -47,6 +47,7 @@
         <el-menu-item index="aboutBg">关于背景</el-menu-item>
         <el-menu-item index="menu">菜单nav</el-menu-item>
         <el-menu-item index="cssworld">CSS世界</el-menu-item>
+        <el-menu-item index="input_tag">标签输入</el-menu-item>
       </el-submenu>
       <el-submenu index="4">
         <template slot="title">
