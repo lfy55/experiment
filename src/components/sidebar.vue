@@ -55,6 +55,7 @@
           <span slot="title">测试想法</span>
         </template>
         <el-menu-item index="testBus">测试BUS eventEmitter</el-menu-item>
+        <el-menu-item index="myLive">血小板最可爱了</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

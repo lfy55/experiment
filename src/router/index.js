@@ -29,6 +29,7 @@ import fxqTab from '@/components/tables/fxqTab'
 import countryData from '@/components/tables/countryData/index'
 
 import testBus from '@/components/others/testBus'
+import myLive from '@/components/others/myLive'
 
 import testMap from '@/pages/testMap'
 import testBar from '@/pages/testBar'
@@ -194,6 +195,11 @@ export default new Router({
       path: "/input_tag",
       name: 'input_tag',
       component: input_tag
-    }
+    },
+    {
+      path: "/myLive",
+      name: 'myLive',
+      component: myLive
+    },
   ]
 })
