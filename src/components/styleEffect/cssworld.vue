@@ -48,6 +48,8 @@ export default {
   margin: auto;
 }
 .container {
+  /* position 属性是为了覆盖element.css的全局样式 */
+  position: relative;
   margin: 0 auto;
   width: 600px;
   border: 3px solid #00c;
