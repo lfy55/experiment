@@ -57,7 +57,7 @@ initTips();
 (function () {
   var text;
 
-  if (window.location.href == `http://localhost:8080/#/myLive`) { //主页URL判断，需要斜杠结尾
+  if (window.location.href == `http://localhost:8080/#/myLive` || window.location.href == 'https://lfy55.github.io/experiment/#/myLive') { //主页URL判断，需要斜杠结尾
     var now = (new Date()).getHours();
     if (now > 23 || now <= 5) {
       text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？';
