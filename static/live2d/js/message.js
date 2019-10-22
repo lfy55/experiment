@@ -84,7 +84,7 @@ initTips();
   showMessage(text, 12000);
 })();
 
-window.setInterval(showHitokoto, 30000);
+window.setInterval(showHitokoto, 10000);
 
 function showHitokoto() {
   $.getJSON('https://v1.hitokoto.cn/', function (result) {

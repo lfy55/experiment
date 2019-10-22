@@ -14,6 +14,7 @@ import testD3 from "@/components/charts/testD3"
 import forLitteArea from '@/components/charts/forLitteArea'
 import graphgl from '@/components/charts/graphgl'
 import orgChart from '@/components/charts/orgChart'
+import flowLineCard from '@/components/charts/flowLineCard'
 
 import jianchu from '@/components/styleEffect/jianchu'
 import BFCTest from '@/components/styleEffect/BFCTest'
@@ -200,6 +201,11 @@ export default new Router({
       path: "/myLive",
       name: 'myLive',
       component: myLive
+    },
+    {
+      path: "/flowLineCard",
+      name: 'flowLineCard',
+      component: flowLineCard
     },
   ]
 })

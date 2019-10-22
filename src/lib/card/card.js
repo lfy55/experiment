@@ -32,12 +32,29 @@ function initCard(dom) {
 
   scene = new THREE.Scene();
 
+  window.cardCameraChange = function(position) {
+    if (!camera) {
+      return
+    }
+    new TWEEN.Tween(camera.position)
+      .to({
+        x: position.x,
+        y: position.y,
+        z: position.z
+      }, 300)
+      .easing(TWEEN.Easing.Exponential.Out)
+      .start();
+    // camera.position.x = position.x
+    // camera.position.y = position.y
+    // camera.position.z = position.z
+  }
+
   // table
   // 渲染卡片dom
   for (var i = 0; i < countries.length; i += 1) {
 
     var element = document.createElement('div');
-    element.id = i;
+    element.id = 'card_' + i;
     element.className = 'element';
     element.style.backgroundColor = 'rgba(0,127,127,' + (Math.random() * 0.5 + 0.25) + ')';
 
@@ -269,7 +286,38 @@ function initCard(dom) {
   controls.rotateSpeed = 0.5;
   controls.minDistance = 500;
   controls.maxDistance = 6000;
-  controls.addEventListener('change', render);
+  let changeTimeout = null,
+    lastPostion = null
+  controls.addEventListener('change', () => {
+    // console.log('>', camera.position)
+
+    function isSmall(a, b) {
+      let x = a.x - b.x
+      let y = a.y - b.y
+      let z = a.z - b.z
+      let x_b = x < 0 ? x > -1 : x < 1
+      let y_b = y < 0 ? y > -1 : y < 1
+      let z_b = z < 0 ? z > -1 : z < 1
+      return x_b && y_b && z_b
+    }
+    if (lastPostion) {
+      if (!isSmall(lastPostion, camera.position)) {
+        clearTimeout(changeTimeout)
+        changeTimeout = setTimeout(() => {
+          console.log('======================>', camera.position)
+        }, 200)
+      }
+    }
+    lastPostion = {
+      x: camera.position.x,
+      y: camera.position.y,
+      z: camera.position.z
+    }
+    render()
+  });
+  // controls.addEventListener('change', debounce(() => {
+  //   console.log('======================>', camera.position)
+  // }, 200))
 
   // 按钮事件触发
   // 恢复默认布局
@@ -292,7 +340,7 @@ function initCard(dom) {
   //     .start();
   // }, false);
 
-  tileLayout();
+  // tileLayout();
   transform(targets.grid, 2000);
 
   //
@@ -456,9 +504,9 @@ function resetCustomState() {
       tile.element.style.display = 'block';
     });
   } else {
-    customState.tiles.forEach(tile => {
-      tile.element.style.display = 'none';
-    });
+    // customState.tiles.forEach(tile => {
+    //   tile.element.style.display = 'none';
+    // });
   }
 }
 
