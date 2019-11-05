@@ -35,6 +35,7 @@
         <el-menu-item index="/testLine">折线图</el-menu-item>
         <el-menu-item index="/cart_3d">三维卡片</el-menu-item>
         <el-menu-item index="/flowLineCard">单环卡片旋转</el-menu-item>
+        <el-menu-item index="/dataeye">数据眼效果</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">

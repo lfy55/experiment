@@ -22,6 +22,23 @@ export default {
   mounted() {
     let fireWork = initWork(this.$refs.canvas)
     fireWork.setCanvasSize()
+
+    setInterval(() => {
+      this.showMessage()
+    }, 15000)
+    this.showMessage()
+  },
+  methods: {
+    showMessage() {
+      $.getJSON('https://v1.hitokoto.cn/', (result) => {
+        this.$notify({
+          title: result.from,
+          dangerouslyUseHTMLString: true,
+          message: `<i>${result.hitokoto}</i>`,
+          duration: 10000,
+        });
+      });
+    },
   },
 };
 </script>
